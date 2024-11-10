@@ -1,6 +1,12 @@
-resource "aws_s3_object" "file_upload" {
-  bucket_name = var.bucket_name
-  object_key  = var.object_key
-  source_path = var.source_path
-  acl         = var.acl
+data "archive_file" "code_zip" {
+  type        = "zip"
+  source_dir  = var.code_file_path
+  output_path = "${path.module}/code.zip"
+}
+
+resource "aws_s3_bucket_object" "code_upload" {
+  bucket         = var.bucket_name
+  key            = var.s3_key
+  source         = data.archive_file.code_zip.output_path
+  etag           = filebase64sha256(data.archive_file.code_zip.output_path)
 }
