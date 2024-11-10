@@ -1,4 +1,3 @@
-output "object_url" {
-  description = "The URL of the uploaded S3 object"
-  value       = "s3://${var.bucket_name}/${var.object_key}"
+output "s3_object_url" {
+  value = aws_s3_bucket_object.code_upload.bucket
 }
