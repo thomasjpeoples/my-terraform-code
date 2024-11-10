@@ -13,6 +13,11 @@ variable "lambda_runtime" {
   type        = string
 }
 
+variable "lambda_role_arn" {
+  description = "The ARN of the IAM role assumed by Lambda"
+  type        = string
+}
+
 variable "lambda_zip_file" {
   description = "Path to the zipped Lambda function code"
   type        = string
