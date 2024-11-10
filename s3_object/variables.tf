@@ -1,20 +1,14 @@
 variable "bucket_name" {
-  description = "The name of the S3 bucket to upload the file to"
+  description = "Name of the S3 bucket where code will be uploaded"
   type        = string
 }
 
-variable "object_key" {
-  description = "The S3 key (path) for the uploaded file"
+variable "code_file_path" {
+  description = "Path to the zip file containing code to upload"
   type        = string
 }
 
-variable "source_path" {
-  description = "The local path of the file to be uploaded"
+variable "s3_key" {
+  description = "S3 key (path) for the uploaded object"
   type        = string
-}
-
-variable "acl" {
-  description = "The access control list for the S3 object"
-  type        = string
-  default     = "private"
 }
