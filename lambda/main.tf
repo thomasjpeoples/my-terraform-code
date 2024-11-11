@@ -10,5 +10,6 @@ resource "aws_lambda_function" "lambda_function" {
   runtime          = var.lambda_runtime
   role             = var.lambda_role_arn
   filename         = data.archive_file.lambda_code.output_path
+  layers           = var.lambda_layers
   source_code_hash = filebase64sha256(data.archive_file.lambda_code.output_path)
 }
