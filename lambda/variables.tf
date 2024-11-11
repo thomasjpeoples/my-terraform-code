@@ -10,7 +10,7 @@ variable "lambda_handler" {
 
 variable "lambda_layers" {
   description = "The layers, or singular, for the Lambda function to use"
-  type        = string
+  type        = list(string)
 }
 
 variable "lambda_runtime" {
