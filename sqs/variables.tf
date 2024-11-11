@@ -1,8 +1,3 @@
-variable "bucket_arn" {
-  description = "ARN of the S3 bucket for the trigger"
-  type        = string
-}
-
 variable "sqs_queue_name" {
   description = "Name of the SQS main queue"
   type        = string
