@@ -8,6 +8,11 @@ variable "lambda_handler" {
   type        = string
 }
 
+variable "lambda_layers" {
+  description = "The layers, or singular, for the Lambda function to use"
+  type        = string
+}
+
 variable "lambda_runtime" {
   description = "The runtime for the Lambda function"
   type        = string
