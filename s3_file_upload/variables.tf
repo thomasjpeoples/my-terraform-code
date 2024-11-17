@@ -3,12 +3,12 @@ variable "bucket_name" {
   type        = string
 }
 
-variable "s3_key" {
-  description = "The S3 key (path) for the uploaded file."
+variable "s3_prefix" {
+  description = "The S3 prefix (path) where the file will be stored (e.g., dv/glue-metadata/)."
   type        = string
 }
 
 variable "file_path" {
-  description = "The local path to the file to upload (could be .txt, .csv, .json, .parquet, etc.)."
+  description = "The local path to the file to upload (could be .txt, .csv, .json, etc.)."
   type        = string
 }
